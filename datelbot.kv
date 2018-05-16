@@ -1,0 +1,81 @@
+#:kivy 1.10.0
+
+#:import main main.datelbot
+
+CustStackLayout:
+<HelpPopup>:
+    title: 'Help'
+
+    AnchorLayout:
+        Dragger:
+            size_hint_y: None
+            height: 320
+
+        MaterialLabel:
+            text: main.help_text
+            color: 0, 0, 0, 1
+            padding_x: 8
+            markup: True
+
+        BoxLayout:
+            Widget:
+
+            MaterialFlatButton:
+                id: help_close_btn
+                text: "Close"
+                pos_hint: {'right': True}
+                on_release: main.dismiss_help()
+
+<CustStackLayout>:
+    orientation: 'lr-tb'
+    pos_hint: {'top': True}
+    padding: 6
+
+    FloatLayout:
+        size_hint: 1, None
+        height: 50
+
+        HeadLabel:
+            id: header
+            pos_hint: {'top': True, 'left': True}
+            size_hint: 1, None
+            size: (0, 30)
+            font_size: 20
+            markup: True
+            text: 'Welcome to [color=442B69]Datelbot[/color]'
+            color: main.theme_cls.primary_color
+            valign: 'bottom'
+            padding_x: 10
+
+        MaterialRaisedButton:
+            id: close_btn
+            size_hint: None, None
+            size: 32, 32
+            anchor_x: 'right'
+            pos_hint: {'top': True, 'right': True}
+            text: '\u00d7'
+            on_release: main.close()
+
+
+    InfoLabel:
+        id: info
+        size_hint: 1, None
+        height: 0
+        font_size: 12
+        padding_x: 8
+
+
+    BoxLayout:
+        size_hint: 1, None
+        height: 50
+
+        MaterialFlatButton:
+            text: 'Emulate'
+            on_release: main.run_emul()
+
+        Widget:        
+
+        MaterialFlatButton:
+            id: help_button
+            text: '?'
+            on_release: main.help()
