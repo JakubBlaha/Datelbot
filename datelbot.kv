@@ -1,8 +1,13 @@
 #:kivy 1.10.0
-
-#:import main main.datelbot
+#:import WindowDragBehavior window_drag_behavior.WindowDragBehavior
+#:import MaterialLabel kivymd.label.MaterialLabel
+#:import MaterialFlatButton kivymd.button.MaterialFlatButton
+#:import MaterialRaisedButton kivymd.button.MaterialRaisedButton
 
 CustStackLayout:
+<Dragger@WindowDragBehavior>:
+<HeadLabel@WindowDragBehavior+MaterialLabel>:
+
 <HelpPopup>:
     title: 'Help'
 
@@ -12,7 +17,7 @@ CustStackLayout:
             height: 320
 
         MaterialLabel:
-            text: main.help_text
+            text: app.help_text
             color: 0, 0, 0, 1
             padding_x: 8
             markup: True
@@ -24,7 +29,7 @@ CustStackLayout:
                 id: help_close_btn
                 text: "Close"
                 pos_hint: {'right': True}
-                on_release: main.dismiss_help()
+                on_release: app.dismiss_help()
 
 <CustStackLayout>:
     orientation: 'lr-tb'
@@ -43,7 +48,7 @@ CustStackLayout:
             font_size: 20
             markup: True
             text: 'Welcome to [color=442B69]Datelbot[/color]'
-            color: main.theme_cls.primary_color
+            color: app.theme_cls.primary_color
             valign: 'bottom'
             padding_x: 10
 
@@ -54,7 +59,7 @@ CustStackLayout:
             anchor_x: 'right'
             pos_hint: {'top': True, 'right': True}
             text: '\u00d7'
-            on_release: main.close()
+            on_release: app.stop()
 
 
     InfoLabel:
@@ -63,6 +68,7 @@ CustStackLayout:
         height: 0
         font_size: 12
         padding_x: 8
+        color: 0.26, 0.16, 0.4, 1
 
 
     BoxLayout:
@@ -71,11 +77,11 @@ CustStackLayout:
 
         MaterialFlatButton:
             text: 'Emulate'
-            on_release: main.run_emul()
+            on_release: app.run_emul()
 
         Widget:        
 
         MaterialFlatButton:
             id: help_button
             text: '?'
-            on_release: main.help()
+            on_release: app.help()

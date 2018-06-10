@@ -12,6 +12,6 @@ VSVersionInfo(
         StringStruct(u'LegalCopyright', u'\xa9 Xtremeware. All rights reserved.'),
         StringStruct(u'OriginalFilename', u'Datelbot.exe'),
         StringStruct(u'ProductName', u'Datelbot'),
-        StringStruct(u'ProductVersion', u'2.2 (4/11/2018)')])
+        StringStruct(u'ProductVersion', u'2.3 (4/11/2018)')])
       ])]
 )
