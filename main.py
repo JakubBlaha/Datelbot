@@ -28,10 +28,10 @@ from material_popup import MaterialPopup
 
 
 class Emulator:
-    @staticmethod
-    def emulate():
-        Emulator.copy()
-        chars = Emulator.get_chars()
+    @classmethod
+    def emulate(cls):
+        cls.copy()
+        chars = cls.get_chars()
         input.write(chars)
 
     @staticmethod
