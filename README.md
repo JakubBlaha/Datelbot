@@ -1,4 +1,4 @@
-![cover](img/cover.png =1000x200)
+![cover](img/cover.png)
 
 # Datelbot
 Provides a fully automatic bot for nedatluj.cz. All binaries are located in the dist folder.
